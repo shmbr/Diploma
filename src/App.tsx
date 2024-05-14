@@ -1,5 +1,14 @@
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./router";
+
 function App() {
-  return <>Diploma</>;
+  return (
+    <>
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;
