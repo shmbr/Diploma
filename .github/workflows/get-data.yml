@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Drop existing data.ts file
-        run: rm -f src/data.ts
+        run: rm -f data.json
 
       - name: Fetch data from URL
         id: fetch-data
