@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <>
-      {data.map((card) => (
+      {data.map((card: any) => (
         <div
           style={{
             border: "1px solid",
