@@ -11,6 +11,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Drop existing data.ts file
+        run: rm -f src/data.ts
+
       - name: Fetch data from URL
         id: fetch-data
         run: |
