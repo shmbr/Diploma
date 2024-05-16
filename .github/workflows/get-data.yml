@@ -1,0 +1,32 @@
+name: Update Data File
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Fetch data from URL
+        id: fetch-data
+        run: |
+          curl -sSL "https://script.google.com/macros/s/AKfycbz_xIKNZ6d9I3IWtPa_tH-Jex9f8-0SDf1OADJ_HL8hf3aAjaCZmPzo1Lua78rPlOi-pA/exec" -o data.json
+
+      - name: Convert JSON to TypeScript
+        id: convert-to-ts
+        run: |
+          echo "export const data = $(cat data.json);" > src/data.ts
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/data.ts
+          git commit -m 'Update data file'
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
