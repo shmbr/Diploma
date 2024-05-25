@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       {SITEMAP.map((route) => (
-        <Link link={route} />
+        <Link link={route.link} />
       ))}
     </>
   );

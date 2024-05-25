@@ -32,12 +32,7 @@ export const decorators = [
     Provider: ThemeProvider,
     GlobalStyles: CssBaseline,
   }),
-  (Story) => (
-
-      <BrowserRouter>
-        <Story />
-      </BrowserRouter>
-  ),
+  (Story) => <BrowserRouter>{Story()}</BrowserRouter>,
 ];
 
 export default preview;

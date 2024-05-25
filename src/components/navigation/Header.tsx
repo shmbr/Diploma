@@ -9,18 +9,26 @@ export interface ILinkProps {
 
 export interface IHeaderProps {
   links?: ILinkProps[];
+
+  onMenuClick?: () => void;
+  onLogoClick?: () => void;
 }
 
-const Header = ({ links }: IHeaderProps) => {
+const Header = ({ links, onMenuClick, onLogoClick }: IHeaderProps) => {
   const theme = useTheme();
   return (
     <Box
       display={"flex"}
       alignItems={"center"}
-      sx={{ background: theme.palette.primary.main, p: 2 }}
+      sx={{
+        background: theme.palette.primary.main,
+        p: 2,
+        top: 0,
+        position: "sticky",
+      }}
       gap={2}
     >
-      <Menu color="secondary" />
+      <Menu color="secondary" onClick={onMenuClick} />
 
       <Box display={"flex"} gap={1}>
         {links?.map((link) => (
@@ -29,7 +37,7 @@ const Header = ({ links }: IHeaderProps) => {
       </Box>
 
       <Box marginLeft={"auto"} display={"flex"} alignItems={"center"}>
-        <PianoIcon color="secondary" />
+        <PianoIcon color="secondary" onClick={onLogoClick} />
       </Box>
     </Box>
   );

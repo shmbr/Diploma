@@ -1,10 +1,10 @@
 import { createTheme } from "@mui/material";
 
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import '@fontsource/material-icons';
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/material-icons";
 
 export const theme = createTheme({
   palette: {
@@ -22,6 +22,13 @@ export const theme = createTheme({
         root: ({ theme }) => ({
           textDecorationColor: theme.palette.primary.light,
           color: theme.palette.secondary.main,
+        }),
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: ({ theme }) => ({
+          background: theme.palette.primary.main,
         }),
       },
     },
