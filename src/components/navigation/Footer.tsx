@@ -1,4 +1,4 @@
-import { Box, Divider, useTheme } from "@mui/material";
+import { Box, Divider, TextField, Typography, useTheme } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -19,6 +19,7 @@ const Footer = () => {
           color: theme.palette.secondary.main,
           marginTop: "auto",
           p: 2,
+          marginInline: 6,
         }}
       >
         <Box display={"flex"} justifyContent={"center"} gap={4} marginTop={4}>
@@ -30,7 +31,7 @@ const Footer = () => {
           <LocationOnIcon />
         </Box>
 
-        <Divider sx={{ marginTop: 6, marginBottom: 0 }} />
+        <Divider sx={{ marginTop: 3, marginBottom: 0 }} />
 
         <Box display={"flex"} justifyContent={"center"} gap={2} marginTop={2}>
           {SITEMAP.map((link) => (

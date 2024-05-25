@@ -56,8 +56,13 @@ export const Playground = () => {
           </Box>
         </Drawer>
 
-        <Box sx={{ height: "100%" }} display={"flex"} flexDirection={"column"}>
-          <Box sx={{ background: "red", height: 1500 }}></Box>
+        <Box
+          sx={{ overflowY: "auto" }}
+          display={"grid"}
+          gridTemplateRows={"auto 1fr auto"}
+          height={"100%"}
+        >
+          <Box sx={{ background: "red", height: 500 }}></Box>
           <Footer />
         </Box>
       </Box>
