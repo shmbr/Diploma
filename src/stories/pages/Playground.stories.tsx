@@ -6,6 +6,7 @@ import { SITEMAP } from "../../routes";
 import Link from "../../components/navigation/Link";
 import { Box } from "@mui/material";
 import Footer from "../../components/navigation/Footer";
+import { Piano } from "@mui/icons-material";
 
 const meta: Meta = {
   title: "Pages/Playground",
@@ -46,12 +47,11 @@ export const Playground = () => {
       <Box display={"flex"} flexDirection={"column"} height={"100vh"}>
         <Header links={DUMMY_LINKS} onMenuClick={toggleDrawer(true)} />
 
-        <Drawer open={open} onClose={toggleDrawer(false)}>
-          <Box sx={{ p: 3 }}>
+        <Drawer open={open} onClose={toggleDrawer(false)} sx={{ width: 400 }}>
+          <Box sx={{ p: 3 }} display={"flex"} flexDirection={"column"} gap={1}>
+            <Piano color="secondary" />
             {SITEMAP.map((link) => (
-              <>
-                <Link link={link.link} text={link.text} />
-              </>
+              <Link link={link.link} text={link.text} />
             ))}
           </Box>
         </Drawer>
@@ -62,7 +62,7 @@ export const Playground = () => {
           gridTemplateRows={"auto 1fr auto"}
           height={"100%"}
         >
-          <Box sx={{ background: "red", height: 500 }}></Box>
+          <Box />
           <Footer />
         </Box>
       </Box>
