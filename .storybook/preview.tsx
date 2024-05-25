@@ -8,6 +8,8 @@ import type { Preview } from "@storybook/react";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { withThemeFromJSXProvider } from "@storybook/addon-themes";
 import { theme } from "../src/theme";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
 const preview: Preview = {
   parameters: {
@@ -30,6 +32,12 @@ export const decorators = [
     Provider: ThemeProvider,
     GlobalStyles: CssBaseline,
   }),
+  (Story) => (
+
+      <BrowserRouter>
+        <Story />
+      </BrowserRouter>
+  ),
 ];
 
 export default preview;
