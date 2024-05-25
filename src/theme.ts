@@ -28,6 +28,7 @@ export const theme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: ({ theme }) => ({
+          width: 250,
           background: theme.palette.primary.main,
         }),
       },
