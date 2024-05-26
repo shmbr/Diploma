@@ -6,6 +6,7 @@ interface IEventCardProps {
   date: string;
   description: string;
   location: string;
+  img?: string;
 }
 
 const EventCard = (props: IEventCardProps) => {
@@ -14,7 +15,6 @@ const EventCard = (props: IEventCardProps) => {
       <Paper elevation={4} sx={{ p: 2 }}>
         <Box display={"flex"} flexDirection={"column"} gap={1}>
           <Box
-            height={200}
             sx={{
               display: "flex",
               justifyContent: "center",
@@ -22,20 +22,20 @@ const EventCard = (props: IEventCardProps) => {
               gap: 2,
             }}
           >
-            <Box sx={{ border: 1, width: "100%", height: "100%" }}>img</Box>
-            <Box
-              sx={{
-                border: 1,
-                width: "40%",
-                maxHeight: 200,
-                maxWidth: 200,
-                aspectRatio: 1,
-              }}
-            >
-              img
-            </Box>
+            {props.img ? (
+              <img
+                src={props.img}
+                style={{
+                  maxHeight: 300,
+                  maxWidth: "100%",
+                  height: "auto",
+                }}
+              />
+            ) : (
+              <>img</>
+            )}
           </Box>
-          <Box display={"flex"} gap={1} sx={{ mt: 5}}>
+          <Box display={"flex"} gap={1} sx={{ mt: 3 }}>
             <Typography variant="h5" fontWeight={"bold"}>
               Назва
             </Typography>

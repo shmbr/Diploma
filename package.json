@@ -26,7 +26,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
-    "shx": "^0.3.4"
+    "shx": "^0.3.4",
+    "vite-plugin-svgr": "^4.2.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.1.1",
