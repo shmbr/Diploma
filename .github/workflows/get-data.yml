@@ -16,6 +16,7 @@ jobs:
 
       - name: Fetch data from URL
         id: fetch-data
+        # todo move url to secrets
         run: |
           curl -sSL "https://script.google.com/macros/s/AKfycbz_xIKNZ6d9I3IWtPa_tH-Jex9f8-0SDf1OADJ_HL8hf3aAjaCZmPzo1Lua78rPlOi-pA/exec" -o data.json
 
