@@ -4,7 +4,7 @@ import Drawer from "@mui/material/Drawer";
 import { useState } from "react";
 import { SITEMAP } from "../../routes";
 import Link from "../../components/navigation/Link";
-import { Alert, Box, Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import Footer from "../../components/navigation/Footer";
 import { Mail, Piano } from "@mui/icons-material";
 

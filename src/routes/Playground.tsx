@@ -1,6 +1,5 @@
 import { Button, Drawer } from "@mui/material";
 // import { DUMMY_LINKS } from "../stories/pages/Playground.stories";
-import Header from "../components/navigation/Header";
 import { useState } from "react";
 
 const Playground = () => {
